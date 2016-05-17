@@ -1,0 +1,56 @@
+{
+  "name": "react-stepform",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/StepForm.js",
+  "dependencies": {
+    "react": "^15.0.1",
+    "react-addons-css-transition-group": "^15.0.1",
+    "react-dom": "^15.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer-loader": "^2.0.0",
+    "babel-cli": "^6.8.0",
+    "babel-core": "^6.1.2",
+    "babel-loader": "^6.0.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-class-properties": "^6.4.0",
+    "babel-polyfill": "^6.0.16",
+    "babel-preset-es2015": "^6.1.2",
+    "babel-preset-react": "^6.3.13",
+    "browserify-global-shim": "^1.0.3",
+    "css-loader": "^0.15.1",
+    "expect": "^1.15.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.7",
+    "html-webpack-plugin": "^2.9.0",
+    "karma": "^0.13.21",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-cli": "^0.1.2",
+    "karma-mocha": "^0.2.2",
+    "karma-mocha-reporter": "^2.0.3",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.7.0",
+    "mocha": "^2.4.5",
+    "node-libs-browser": "^0.5.2",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.12.3",
+    "uglifyjs": "^2.4.10",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.10.1"
+  },
+  "scripts": {
+    "start": "gulp webpack-dev-server",
+    "test": "karma start",
+    "pre:babel": "babel ./src --out-dir ./lib --source-maps --presets es2015,react --plugins transform-class-properties,babel-plugin-add-module-exports",
+    "pre:browserify": "browserify ./lib/StepForm.js -o ./build/step-form.js --transform browserify-global-shim --standalone StepForm",
+    "pre:uglify": "uglifyjs ./build/step-form.js --compress --mangle --output ./build/step-form.min.js --source-map ./build/step-form.min.js.map",
+    "prepublish": "npm run pre:babel && npm run pre:browserify && npm run pre:uglify"
+  },
+  "browserify-global-shim": {
+    "react": "React"
+  },
+  "author": "Net Engine",
+  "license": "MIT"
+}
