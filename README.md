@@ -4,7 +4,11 @@
 
 ## Installation
 
-`npm install react-stepform` -- soon...
+`npm install react-stepform`
+
+## Usage
+
+See example
 
 ## Properties
 

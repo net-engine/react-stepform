@@ -4,7 +4,7 @@ import React from 'react';
 
 export default class TestPage extends React.Component {
 
-  // Flow form provides a few form control functions via context
+  // Step form provides a few form control functions via context
   static contextTypes = {
     nextPage: React.PropTypes.func
   }
