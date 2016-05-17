@@ -1,36 +1,27 @@
-# Webpack starter
+# React Step Form
 
-  Inspired by James K Nelsons "webpack-black-triangle"
+  This component is used to handle the flow between pages and allows for easy, yet controlled navigation between them.
 
-## Technologies
+## Installation
 
-  - Gulp
-  - Webpack (dev-server, stream)
-  - ES6 (babel)
-  - React
-  - React Router
-  - Sass (with necessary loaders)
-  - jQuery
-  - lodash
+`npm install react-stepform` -- soon...
 
-## Things it does
+## Properties
 
-  - Generates your index.html file from template
-  - Compiles your React in bundle.js
-  - Extracts your compiled css into main.css
-  - Injects bundle.js and main.css references in to index.html
-  - Uses karma to run your specs
+| Prop | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| `currentPage` | 0 | Integer | Can be set initially to be the landing page. This will also modify the current page if changed. |
+| `transitionName` | step | String | Used for css transition effect with ReactCSSTransitionGroup |
+| `transitionTiming` | [500, 300] | Array | Enter timeout and leave timeout for ReactCSSTransitionGroup |
+| `pageOrder` | ascending | Array | Array of integers indicating order in which the pages should display |
+| `onPageChange` | null | Function | Function that is fired when the page changes via any catalyst |
+| `onFinish` | null | Function | Function that is fired when the last page change |
+| `className` | null | String | Appended to component class list |
 
-## Entry points
+## Context
 
-  - src/main.js
-  - src/style/main.css
-  - src/index.html
-
-## Outputs
-
-  - dist/bundle.js
-  - dist/bundle.js.map
-  - dist/main.css
-  - dist/main.css.map
-  - dist/index.html
+| Context | Type | Description |
+| -------- | ---- | ----------- |
+| `nextPage` | Function | Move to he next page |
+| `previousPage` | Function | Move ot the previous page |
+| `setPage` | Function | Move to specific page |
